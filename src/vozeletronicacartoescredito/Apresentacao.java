@@ -315,7 +315,7 @@ public class Apresentacao extends javax.swing.JFrame {
             String NomeMusica=(String)EscolhaMusica.getSelectedItem();
             String PathAudios="C:\\VozEletronicaCartoesCredito\\Sons\\";
             ExecutaSom play = new ExecutaSom();
-            play.executaSom(PathAudios+NomeMusica+".wav",true);
+            play.executaMusica(PathAudios+NomeMusica+".wav",true);
         } catch (Exception ex) {
             Logger.getLogger(Apresentacao.class.getName()).log(Level.SEVERE, null, ex);
         }

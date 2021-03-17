@@ -17,6 +17,7 @@ public class Apresentacao extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jComboBox1 = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         ValorFatura = new javax.swing.JFormattedTextField();
@@ -33,6 +34,9 @@ public class Apresentacao extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        EscolhaMusica = new javax.swing.JComboBox<>();
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setType(java.awt.Window.Type.UTILITY);
@@ -90,6 +94,13 @@ public class Apresentacao extends javax.swing.JFrame {
 
         jLabel9.setText("Leonardo Loureiro de Almeida");
 
+        EscolhaMusica.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TUTS TUTS QUERO VER", "OH RITA", "BEAUTIFUL GIRLS", "ALO AMBEV" }));
+        EscolhaMusica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EscolhaMusicaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -113,13 +124,15 @@ public class Apresentacao extends javax.swing.JFrame {
                         .addComponent(Imagem, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(49, 49, 49))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(opcao, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(17, 17, 17)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton1)
-                        .addGap(47, 47, 47)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(EscolhaMusica, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton2)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
@@ -144,7 +157,8 @@ public class Apresentacao extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jButton1)
                         .addComponent(opcao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton2)))
+                        .addComponent(jButton2)
+                        .addComponent(EscolhaMusica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(32, 32, 32)
@@ -298,7 +312,7 @@ public class Apresentacao extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         try {            
             //Nome da Música    
-            String NomeMusica="TUTS TUTS QUERO VER";
+            String NomeMusica=(String)EscolhaMusica.getSelectedItem();
             String PathAudios="C:\\VozEletronicaCartoesCredito\\Sons\\";
             ExecutaSom play = new ExecutaSom();
             play.executaSom(PathAudios+NomeMusica+".wav",true);
@@ -310,6 +324,10 @@ public class Apresentacao extends javax.swing.JFrame {
     private void opcaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_opcaoActionPerformed
+
+    private void EscolhaMusicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EscolhaMusicaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EscolhaMusicaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -348,11 +366,13 @@ public class Apresentacao extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFormattedTextField Disponivel;
+    private javax.swing.JComboBox<String> EscolhaMusica;
     private javax.swing.JLabel Imagem;
     private javax.swing.JFormattedTextField Limite;
     private javax.swing.JFormattedTextField ValorFatura;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
